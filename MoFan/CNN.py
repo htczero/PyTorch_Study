@@ -108,7 +108,7 @@ for epoch in range(EPOCH):
             with torch.no_grad():
                 test_output, last_layer = cnn(test_x)
                 pred_y = torch.max(test_output, 1)[1].data.squeeze()
-                accuracy = float(torch.sum(pred_y == test_y).numpy()) / float(test_y.size(0))
+                accuracy = float(torch.sum(pred_y == test_y).item().numpy()) / float(test_y.size(0))
                 print('Epoch: ', epoch, '| train loss: %.4f' % loss.data.numpy(), '| test accuracy: %.2f' % accuracy)
                 # if HAS_SK:
                 #     # Visualization of trained flatten layer (T-SNE)
