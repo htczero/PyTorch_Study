@@ -1,3 +1,7 @@
+'''
+Pytorch 0.4.0
+'''
+
 import torch
 import torchvision
 import torchvision.transforms as transforms
