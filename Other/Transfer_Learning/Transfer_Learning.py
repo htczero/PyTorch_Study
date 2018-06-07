@@ -2,7 +2,7 @@
 
 data: https://download.pytorch.org/tutorial/hymenoptera_data.zip
 Pytorch 0.4.0
-
+tutorials: https://pytorch.org/tutorials/beginner/transfer_learning_tutorial.html
 '''
 
 
@@ -30,14 +30,14 @@ DEVICE = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 # #################################### data ##########################################################
 
 train_transform = tf.Compose([tf.RandomResizedCrop(224),
-                             tf.RandomHorizontalFlip(),
-                             tf.ToTensor(),
-                             tf.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])])
+                              tf.RandomHorizontalFlip(),
+                              tf.ToTensor(),
+                              tf.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])])
 
 val_transform = tf.Compose([tf.Resize(256),
-                             tf.CenterCrop(224),
-                             tf.ToTensor(),
-                             tf.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])])
+                            tf.CenterCrop(224),
+                            tf.ToTensor(),
+                            tf.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])])
 
 train_dataset = datasets.ImageFolder('./hymenoptera_data/train', train_transform)
 train_loader = data.DataLoader(train_dataset, batch_size=BATCH_SIZE, shuffle=True)

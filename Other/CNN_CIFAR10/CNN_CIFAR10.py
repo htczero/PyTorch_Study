@@ -1,5 +1,6 @@
 '''
 Pytorch 0.4.0
+tutorials: https://pytorch.org/tutorials/beginner/blitz/cifar10_tutorial.html#training-an-image-classifier
 '''
 
 import torch
